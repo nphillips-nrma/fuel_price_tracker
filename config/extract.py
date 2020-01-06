@@ -137,7 +137,7 @@ extract_map = {
         }
     ,   "find_date":{   
             'id':'strong'
-        ,   "regex":"Effective from (\d{2}/\d{2}/\d{4})"
+        ,   "regex":"Effective from (\d{1,2}/\d{1,2}/\d{4})"
         ,   "dt_fmt":"%d/%m/%Y"
         }
     ,   "output_fields":['STATE','LOCATION','date','DIESEL','PULP95','ULP']
