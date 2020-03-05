@@ -117,6 +117,8 @@ tgp_base['dedup_hash'] = tgp_base[config.get('final_idvars')+['fuel_type']].appl
 tgp_base = tgp_base.query('fuel_price == fuel_price')
 tgp_base['upd_dt_utc'] = dt
 
+assert tgp_base.date.nunique() <= 2 , "ERROR: pulling through weird dates"
+
 spreadsheet = gsheet_client.open_by_url('https://docs.google.com/spreadsheets/d/1df8SMAI-gOCYpNwTX1_v8ab0xY0hrLdPBzFvymaqoWc/edit?usp=sharing')
 
 list_of_lists = spreadsheet.sheet1.get_all_values()

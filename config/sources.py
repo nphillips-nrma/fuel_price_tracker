@@ -89,8 +89,8 @@ data_source = {
         "source":"bp"
     ,   "feed":"tgp"
     ,   "how":"pdf"
-    ,   "url":"https://www.bp.com/content/dam/bp-country/en_au/products-services/pricing/terminal-gate-price.pdf"
-    }
+    ,   "url":"https://www.bp.com/content/dam/bp/country-sites/en_au/australia/home/products-services/pricing/terminal-gate-price.pdf"
+    }  
 ,   "tgp_mobil":{
         "source":"mobil"
     ,   "feed":"tgp"
