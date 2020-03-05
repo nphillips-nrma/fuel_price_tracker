@@ -6,7 +6,7 @@ import time,datetime,math
 from bs4 import BeautifulSoup
 import hashlib 
 
-os.system("$HOME/.bash_profile")
+os.system("/home/ec2-user/.bash_profile")
 sys.path.append(os.environ.get('FUEL_DIR'))
 
 from config import * 
