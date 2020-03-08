@@ -1,3 +1,5 @@
+## ensure enviroment variables are set: "AUTH_DIR", "FUEL_DIR"
+
 
 import pandas as pd
 import numpy as np
@@ -117,7 +119,10 @@ tgp_base['dedup_hash'] = tgp_base[config.get('final_idvars')+['fuel_type']].appl
 tgp_base = tgp_base.query('fuel_price == fuel_price')
 tgp_base['upd_dt_utc'] = dt
 
-assert tgp_base.date.nunique() <= 2 , "ERROR: pulling through weird dates"
+
+## chekc date 
+dt_range = (pd.to_datetime(tgp_base.date.max()) - pd.to_datetime(tgp_base.date.min())).days
+assert dt_range < 7 , "ERROR: pulling through weird dates"
 
 spreadsheet = gsheet_client.open_by_url('https://docs.google.com/spreadsheets/d/1df8SMAI-gOCYpNwTX1_v8ab0xY0hrLdPBzFvymaqoWc/edit?usp=sharing')
 
